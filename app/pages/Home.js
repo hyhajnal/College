@@ -2,7 +2,6 @@ import React from 'react';
 import {
   View,
   StyleSheet,
-  Text,
   ScrollView,
   RefreshControl
 } from 'react-native';
@@ -17,6 +16,10 @@ import {
   Stragety
 } from './Type';
 
+import CompetitionPage from './Competition/Competition';
+import MapPage from './Map/Map';
+import GroupPage from './Group/Group';
+import MarketPage from './Market/Market';
 import Wrap from './ItemWrap';
 import Hr from '../components/Hr';
 
@@ -64,19 +67,16 @@ class Home extends React.Component {
             </ScrollView>
           </View>
           <View key={2} tabLabel="比赛" style={styles.base}>
-            <Text>hknk</Text>
+            <CompetitionPage />
           </View>
-          <View key={3} tabLabel="公告" style={styles.base}>
-            <Text>hknk</Text>
+          <View key={3} tabLabel="校园" style={styles.base}>
+            <MapPage />
           </View>
-          <View key={4} tabLabel="社团" style={styles.base}>
-            <Text>hknk</Text>
+          <View key={4} tabLabel="小组" style={styles.base}>
+            <GroupPage />
           </View>
           <View key={5} tabLabel="二手" style={styles.base}>
-            <Text>hknk</Text>
-          </View>
-          <View key={6} tabLabel="失物" style={styles.base}>
-            <Text>hknk</Text>
+            <MarketPage />
           </View>
         </ScrollableTabView>
       </View>
