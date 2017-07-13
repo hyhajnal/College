@@ -3,7 +3,9 @@ import { Dimensions, Platform } from 'react-native';
 const { width, height } = Dimensions.get('window');
 
 export const Color = {
+  mainColor: '#ffdd76',
   background: '#eee',
+  dark: '#404040',
   clear: 'rgba(0,0,0,0)',
   facebook: '#3b5998',
   transparent: 'rgba(0,0,0,0)',

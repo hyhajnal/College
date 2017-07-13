@@ -1158,7 +1158,7 @@ combined-stream@^1.0.5, combined-stream@~1.0.5:
   dependencies:
     delayed-stream "~1.0.0"
 
-commander@^2.9.0:
+commander@*, commander@^2.9.0:
   version "2.10.0"
   resolved "http://registry.npm.taobao.org/commander/download/commander-2.10.0.tgz#e1f5d3245de246d1a5ca04702fa1ad1bd7e405fe"
   dependencies:
@@ -3322,6 +3322,12 @@ mkdirp@^0.5.0, mkdirp@^0.5.1:
   dependencies:
     minimist "0.0.8"
 
+mockjs@^1.0.1-beta3:
+  version "1.0.1-beta3"
+  resolved "http://registry.npm.taobao.org/mockjs/download/mockjs-1.0.1-beta3.tgz#d234f3c27256397564f2c955142e891909537209"
+  dependencies:
+    commander "*"
+
 moment@2.x.x:
   version "2.18.1"
   resolved "http://registry.npm.taobao.org/moment/download/moment-2.18.1.tgz#c36193dd3ce1c2eed2adb7c802dbbc77a81b1c0f"
@@ -3808,6 +3814,10 @@ raw-body@2, raw-body@~2.1.2:
     bytes "2.4.0"
     iconv-lite "0.4.13"
     unpipe "1.0.0"
+
+react-amap@^1.0.1:
+  version "1.0.1"
+  resolved "http://registry.npm.taobao.org/react-amap/download/react-amap-1.0.1.tgz#ca4c68ba69e0dc21c67d433ce78b6a87d2bf101c"
 
 react-clone-referenced-element@^1.0.1:
   version "1.0.1"

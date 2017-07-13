@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, WebView } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 class Msg extends Component {
@@ -24,7 +24,13 @@ class Msg extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Me</Text>
+        <WebView
+          bounces={false}
+          scalesPageToFit
+          /* source={{ uri: 'http://www.hangge.com', method: 'GET' }} */
+          source={require('./map.html')}
+          style={{ width: 400, height: 800 }}
+        />
       </View>
     );
   }

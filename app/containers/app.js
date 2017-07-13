@@ -25,6 +25,7 @@ import WebViewPage from '../pages/WebViewPage';
 import Explore from '../pages/Explore';
 import Me from '../pages/Me';
 import Msg from '../pages/Msg';
+import { Color } from '../utils/Theme';
 
 const TabContainer = TabNavigator(
   {
@@ -37,11 +38,11 @@ const TabContainer = TabNavigator(
     lazy: true,
     tabBarPosition: 'bottom',
     tabBarOptions: {
-      activeTintColor: '#3e9ce9',
+      activeTintColor: `${Color.mainColor}`,
       inactiveTintColor: '#999999',
       showIcon: true,
       style: {
-        backgroundColor: '#fff'
+        backgroundColor: `${Color.dark}`
       },
       indicatorStyle: {
         opacity: 0
@@ -74,7 +75,7 @@ const App = StackNavigator(
     headerMode: 'screen',
     navigationOptions: {
       headerStyle: {
-        backgroundColor: '#3e9ce9'
+        backgroundColor: `${Color.mainColor}`
       },
       headerTitleStyle: {
         color: '#fff',

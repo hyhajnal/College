@@ -568,12 +568,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 820;
-				ORGANIZATIONNAME = RichardCao;
-				TargetAttributes = {
-					13B07F861A680F5B00A75B9A = {
-						DevelopmentTeam = K268C9Y5CJ;
-					};
-				};
+				ORGANIZATIONNAME = hajnal;
 			};
 			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "reading" */;
 			compatibilityVersion = "Xcode 8.0";
@@ -920,13 +915,14 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_TEAM = 4Z758SUGX5;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = reading/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.richardcao.reading;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hajnal.reading;
 				PRODUCT_NAME = iReading;
 				PROVISIONING_PROFILE = "";
 			};
@@ -939,13 +935,14 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 4Z758SUGX5;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = reading/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.richardcao.reading;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hajnal.reading;
 				PRODUCT_NAME = iReading;
 				PROVISIONING_PROFILE = "";
 			};

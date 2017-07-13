@@ -24,7 +24,8 @@ class Me extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Me</Text>
+        {/* <Map amapkey={'ef8ce426c07865dda6f848765680a9b8'} /> */}
+        <Text>me</Text>
       </View>
     );
   }

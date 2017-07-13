@@ -75,9 +75,7 @@ const FeedList = React.createClass({
 
   renderFeed(data) {
     return (
-      <FeedCell
-        key={data}
-      />
+      <FeedCell key={data} />
     );
   }
 });

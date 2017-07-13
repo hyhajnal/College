@@ -52,7 +52,7 @@ class FeedCell extends React.Component {
               style={styles.tagsContainer}
             >
               {
-                tags.map(tag => (<TouchableOpacity>
+                tags.map(tag => (<TouchableOpacity key={tag}>
                   <Text style={{ fontSize: 16, color: '#9B9B9B', marginRight: 5 }}>{tag}</Text>
                 </TouchableOpacity>))
               }

@@ -5,8 +5,8 @@ import {
   ScrollView,
   RefreshControl
 } from 'react-native';
-
 import ScrollableTabView, { DefaultTabBar } from 'react-native-scrollable-tab-view';
+import { Color } from '../utils/Theme';
 import {
   Club,
   Competition,
@@ -34,8 +34,8 @@ class Home extends React.Component {
           )}
           tabBarBackgroundColor="#fcfcfc"
           tabBarUnderlineStyle={styles.tabBarUnderline}
-          tabBarActiveTextColor="#3e9ce9"
-          tabBarInactiveTextColor="#aaaaaa"
+          tabBarActiveTextColor={Color.mainColor}
+          tabBarInactiveTextColor="#555"
         >
           <View key={1} tabLabel="推荐" style={styles.base}>
             <ScrollView
@@ -75,7 +75,7 @@ class Home extends React.Component {
           <View key={4} tabLabel="小组" style={styles.base}>
             <GroupPage />
           </View>
-          <View key={5} tabLabel="二手" style={styles.base}>
+          <View key={5} tabLabel="集市" style={styles.base}>
             <MarketPage />
           </View>
         </ScrollableTabView>
@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
     fontSize: 16
   },
   tabBarUnderline: {
-    backgroundColor: '#3e9ce9',
+    backgroundColor: Color.mainColor,
     height: 2
   }
 });
