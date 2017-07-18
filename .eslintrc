@@ -25,6 +25,7 @@
         "react/prefer-stateless-function": 0,
         "class-methods-use-this": 0,
         "react/require-default-props": 0,
-        "no-underscore-dangle":"off"
+        "no-underscore-dangle":"off",
+        "global-require":"off"
     }
 }

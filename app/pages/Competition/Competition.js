@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { StyleSheet, ListView, Image, Text, ScrollView, View } from 'react-native';
+import { StyleSheet, ListView, Image, Text, ScrollView, View, TouchableHighlight } from 'react-native';
 import Icon from 'react-native-vector-icons/Entypo';
 import Swiper from 'react-native-swiper';
 import { Col, Row, Grid } from 'react-native-easy-grid';
-import { width } from '../../utils/ToolUtil';
+import { width, px2dp } from '../../utils/ToolUtil';
 import Button from '../../components/Button';
 import { Heading1, Heading2 } from '../../components/Text';
 
@@ -62,7 +62,7 @@ class Competition extends Component {
         automaticallyAdjustContentInsets={false}
       >
         <Swiper
-          height={100}
+          height={px2dp(100)}
           autoplay
           autoplayTimeout={2}
           showsButtons={false}
@@ -72,15 +72,30 @@ class Competition extends Component {
           <Image style={styles.img} source={pic3} />
         </Swiper>
         <View style={styles.iconMenu}>
-          <View style={styles.menuItem}>
-            <Icon name="light-bulb" style={styles.icon} size={30} /><Text>项目组</Text>
-          </View>
-          <View style={styles.menuItem}>
-            <Icon name="colours" style={styles.icon} size={30} /><Text>导师库</Text>
-          </View>
-          <View style={[styles.menuItem, { borderColor: 'transparent' }]}>
-            <Icon name="flow-branch" style={styles.icon} size={30} /><Text>赛事</Text>
-          </View>
+          <TouchableHighlight
+            onPress={() => this.props.navigate('FilterList')}
+            style={styles.menuItem}
+          >
+            <View style={{ alignItems: 'center', flexDirection: 'column' }}>
+              <Icon name="light-bulb" style={styles.icon} size={px2dp(20)} /><Text>项目组</Text>
+            </View>
+          </TouchableHighlight>
+          <TouchableHighlight
+            onPress={() => this.props.navigate('FilterList')}
+            style={styles.menuItem}
+          >
+            <View style={{ alignItems: 'center', flexDirection: 'column' }}>
+              <Icon name="colours" style={styles.icon} size={px2dp(20)} /><Text>导师库</Text>
+            </View>
+          </TouchableHighlight>
+          <TouchableHighlight
+            onPress={() => this.props.navigate('FilterList')}
+            style={[styles.menuItem, { borderColor: 'transparent' }]}
+          >
+            <View style={{ alignItems: 'center', flexDirection: 'column' }}>
+              <Icon name="flow-branch" style={styles.icon} size={px2dp(20)} /><Text>赛事</Text>
+            </View>
+          </TouchableHighlight>
         </View>
         <ListView
           dataSource={dataSource}
@@ -96,9 +111,9 @@ const con = {
   borderRadius: 5,
   borderWidth: 1,
   borderColor: '#ccc',
-  padding: 10,
-  marginVertical: 10,
-  marginHorizontal: 40,
+  padding: px2dp(10),
+  marginVertical: px2dp(10),
+  marginHorizontal: px2dp(20),
   overflow: 'hidden'
 };
 
@@ -110,7 +125,10 @@ const styles = StyleSheet.create({
   },
   img: {
     width,
-    height: 100
+    height: px2dp(100)
+  },
+  icon: {
+    marginBottom: px2dp(5)
   },
   iconMenu: {
     flexDirection: 'row',
@@ -123,8 +141,7 @@ const styles = StyleSheet.create({
   menuItem: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
-    marginVertical: 10,
+    marginVertical: px2dp(5),
     borderColor: '#eee',
     borderRightWidth: 2
   },

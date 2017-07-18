@@ -4,6 +4,7 @@ import Icon from 'react-native-vector-icons/Entypo';
 import { width } from '../../utils/ToolUtil';
 import Button from '../../components/Button';
 import { Heading2 } from '../../components/Text';
+import Type from './Type';
 import data from './good_mock';
 
 const goods = data.goods;
@@ -86,41 +87,12 @@ class Market extends Component {
     );
   }
 
-  _renderGridView() {
-    return (
-      <View>
-        <View style={styles.iconMenu}>
-          <View style={styles.menuItem}>
-            <Icon name="grid" style={styles.icon} size={30} /><Text>图书</Text>
-          </View>
-          <View style={styles.menuItem}>
-            <Icon name="location-pin" style={styles.icon} size={30} /><Text>数码</Text>
-          </View>
-          <View style={[styles.menuItem, { borderColor: 'transparent' }]}>
-            <Icon name="flow-branch" style={styles.icon} size={30} /><Text>衣物</Text>
-          </View>
-        </View>
-        <View style={styles.iconMenu}>
-          <View style={styles.menuItem}>
-            <Icon name="light-bulb" style={styles.icon} size={30} /><Text>百货</Text>
-          </View>
-          <View style={styles.menuItem}>
-            <Icon name="help" style={styles.icon} size={30} /><Text>出行</Text>
-          </View>
-          <View style={[styles.menuItem, { borderColor: 'transparent' }]}>
-            <Icon name="book" style={styles.icon} size={30} /><Text>课程</Text>
-          </View>
-        </View>
-      </View>
-    );
-  }
-
   render() {
     return (
       <ScrollView
         automaticallyAdjustContentInsets={false}
       >
-        {this._renderGridView()}
+        <Type />
         <View style={{ flexDirection: 'row', width, alignItems: 'flex-start', padding: 10 }}>
           <View style={{ flex: 1 }} onLayout={({ nativeEvent: e }) => this.getLH(e)}>
             {this.state.leftColumn.length > 0 &&

@@ -7,6 +7,7 @@ import {
 } from 'react-native';
 import ScrollableTabView, { DefaultTabBar } from 'react-native-scrollable-tab-view';
 import { Color } from '../utils/Theme';
+import { px2dp } from '../utils/ToolUtil';
 import {
   Club,
   Competition,
@@ -17,7 +18,7 @@ import {
 } from './Type';
 
 import CompetitionPage from './Competition/Competition';
-import MapPage from './Map/Map';
+import CampusPage from './Campus/Campus';
 import GroupPage from './Group/Group';
 import MarketPage from './Market/Market';
 import Wrap from './ItemWrap';
@@ -32,9 +33,10 @@ class Home extends React.Component {
           renderTabBar={() => (
             <DefaultTabBar tabStyle={styles.tab} textStyle={styles.tabText} />
           )}
-          tabBarBackgroundColor="#fcfcfc"
+          tabBarBackgroundColor="#fff"
           tabBarUnderlineStyle={styles.tabBarUnderline}
-          tabBarActiveTextColor={Color.mainColor}
+          tabBarActiveTextColor={Color.mainText}
+          tabsContainerStyle={{ height: 10 }}
           tabBarInactiveTextColor="#555"
         >
           <View key={1} tabLabel="推荐" style={styles.base}>
@@ -67,13 +69,13 @@ class Home extends React.Component {
             </ScrollView>
           </View>
           <View key={2} tabLabel="比赛" style={styles.base}>
-            <CompetitionPage />
+            <CompetitionPage navigate={this.props.navigate} />
           </View>
           <View key={3} tabLabel="校园" style={styles.base}>
-            <MapPage />
+            <CampusPage navigate={this.props.navigate} />
           </View>
           <View key={4} tabLabel="小组" style={styles.base}>
-            <GroupPage />
+            <GroupPage navigate={this.props.navigate} />
           </View>
           <View key={5} tabLabel="集市" style={styles.base}>
             <MarketPage />
@@ -91,13 +93,13 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff'
   },
   tab: {
-    paddingBottom: 0
+    height: 10
   },
   tabText: {
-    fontSize: 16
+    fontSize: px2dp(14)
   },
   tabBarUnderline: {
-    backgroundColor: Color.mainColor,
+    backgroundColor: Color.mainText,
     height: 2
   }
 });

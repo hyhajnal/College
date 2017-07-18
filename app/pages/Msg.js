@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, WebView } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
+import { GiftedChat } from 'react-native-gifted-chat';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 class Msg extends Component {
@@ -21,17 +22,42 @@ class Msg extends Component {
     )
   })
 
+  state = {
+    messages: [],
+  };
+
+  componentWillMount() {
+    this.setState({
+      messages: [
+        {
+          _id: 1,
+          text: 'Hello developer',
+          createdAt: new Date(),
+          user: {
+            _id: 2,
+            name: 'React Native',
+            avatar: 'https://facebook.github.io/react/img/logo_og.png',
+          },
+        },
+      ],
+    });
+  }
+
+  onSend(messages = []) {
+    this.setState(previousState => ({
+      messages: GiftedChat.append(previousState.messages, messages),
+    }));
+  }
+
   render() {
     return (
-      <View style={styles.container}>
-        <WebView
-          bounces={false}
-          scalesPageToFit
-          /* source={{ uri: 'http://www.hangge.com', method: 'GET' }} */
-          source={require('./map.html')}
-          style={{ width: 400, height: 800 }}
-        />
-      </View>
+      <GiftedChat
+        messages={this.state.messages}
+        onSend={messages => this.onSend(messages)}
+        user={{
+          _id: 1,
+        }}
+      />
     );
   }
 }

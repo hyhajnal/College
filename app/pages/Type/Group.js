@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, Image, ScrollView } from 'react-native';
 import { Col, Row, Grid } from 'react-native-easy-grid';
 import { Heading1 } from '../../components/Text';
-import { width } from '../../utils/ToolUtil';
+import { width, px2dp } from '../../utils/ToolUtil';
 import Button from '../../components/Button';
 
 const pic = require('../../img/pic.jpg');
@@ -24,7 +24,7 @@ class Group extends Component {
         >
           {tag}
         </Button>
-        <Row style={{ padding: 10 }}>
+        <Row style={{ padding: px2dp(10) }}>
           <Col style={{ justifyContent: 'space-between' }} size={3}>
             <Row>
               <Heading1 numberOfLines={2}>
@@ -32,8 +32,7 @@ class Group extends Component {
               </Heading1>
             </Row>
             <Row style={{ justifyContent: 'center' }}>
-              <Text>5/3</Text>
-              <Text>73</Text>
+              <Text style={{ paddingVertical: px2dp(4) }}>5&nbsp;/&nbsp;9</Text>
             </Row>
             <Row style={{ justifyContent: 'center' }}>
               <Button
@@ -67,42 +66,41 @@ class Group extends Component {
 }
 
 const con = {
-  width: width * 0.4,
+  width: width * 0.5,
   borderRadius: 5,
   borderWidth: 1,
   borderColor: '#ccc',
-  marginHorizontal: 10,
+  marginHorizontal: px2dp(10),
   overflow: 'hidden'
 };
 
 const styles = StyleSheet.create({
   icon: {
-    width: 32,
-    height: 32,
+    width: px2dp(32),
+    height: px2dp(32),
   },
   img: {
-    height: 80,
-    width: 80,
-    borderRadius: 40,
-    marginTop: 10,
+    height: px2dp(80),
+    width: px2dp(80),
+    borderRadius: px2dp(40),
+    marginTop: px2dp(10),
     backgroundColor: 'transparent'
   },
   btn: {
-    width: 80,
+    width: px2dp(80),
     padding: 2,
-    marginTop: 10,
+    marginTop: px2dp(10),
     borderTopRightRadius: 5,
     borderBottomRightRadius: 5,
     backgroundColor: 'green',
   },
   btnText: {
-    fontSize: 13,
+    fontSize: px2dp(13),
     color: '#fff'
   },
   add: {
-    width: 70,
-    padding: 5,
-    marginTop: 10,
+    width: px2dp(80),
+    padding: px2dp(5),
     borderRadius: 2,
     borderColor: 'green',
     borderWidth: 1

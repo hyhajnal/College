@@ -5,6 +5,7 @@ import { Col, Row, Grid } from 'react-native-easy-grid';
 import { Heading1, Heading2 } from '../../components/Text';
 import StarRating from '../../components/Star';
 import Button from '../../components/Button';
+import { px2dp } from '../../utils/ToolUtil';
 
 const pic1 = require('../../img/pic5.jpg');
 const pic2 = require('../../img/pic6.jpg');
@@ -48,15 +49,15 @@ class Club extends Component {
         </Button>
         <Heading1
           style={[styles.rtext, {
-            position: 'absolute', bottom: 50 }]}
+            position: 'absolute', bottom: px2dp(50) }]}
         >
           动漫社20周年演出
         </Heading1>
         <Text style={[styles.rtext, {
-          position: 'absolute', bottom: 25 }]}
+          position: 'absolute', bottom: px2dp(25) }]}
         >366人已参与</Text>
         <Text style={[styles.rtext, {
-          position: 'absolute', bottom: 5 }]}
+          position: 'absolute', bottom: px2dp(5) }]}
         >5月20日 18:30 大剧院</Text>
       </Image>
     );
@@ -64,7 +65,7 @@ class Club extends Component {
 
   _renderItem() {
     return (
-      <Grid style={{ height: 200 }}>
+      <Grid style={{ height: px2dp(200) }}>
         <Col style={{ marginRight: 10, overflow: 'hidden' }}>
           <Swiper
             autoplay
@@ -111,8 +112,8 @@ class Club extends Component {
 
 const styles = StyleSheet.create({
   img: {
-    width: 200,
-    height: 200,
+    width: px2dp(200),
+    height: px2dp(200),
     resizeMode: 'cover',
   },
   rtext: {
@@ -121,16 +122,16 @@ const styles = StyleSheet.create({
     padding: 5
   },
   btn: {
-    width: 80,
+    width: px2dp(80),
     padding: 2,
     borderRadius: 5,
     backgroundColor: 'green',
     position: 'absolute',
-    right: 20,
-    top: 10
+    right: px2dp(20),
+    top: px2dp(10)
   },
   btnText: {
-    fontSize: 13,
+    fontSize: px2dp(13),
     color: '#fff'
   },
 });

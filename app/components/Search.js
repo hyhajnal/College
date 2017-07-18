@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, TextInput, Keyboard } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-import { isIOS } from '../utils/ToolUtil';
+import { isIOS, px2dp } from '../utils/ToolUtil';
 
 class SearchBar extends Component {
 
@@ -36,10 +36,10 @@ class SearchBar extends Component {
     return (
       <View style={[styles.container, this.props.style]}>
         <View style={styles.inputContainer}>
-          <Icon name="ios-search" size={25} />
+          <Icon name="ios-search" size={px2dp(20)} />
           <TextInput
             style={styles.input}
-            placeholder="搜索"
+            placeholder="搜索我的校园"
             returnKeyType="search"
             onSubmitEditing={this.onSubmitEditing}
             onChangeText={(text) => { this.onChangeText(text); }}
@@ -53,27 +53,24 @@ class SearchBar extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    height: 32,
+    height: px2dp(32),
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center'
   },
   inputContainer: {
     flex: 1,
-    height: 32,
+    height: px2dp(32),
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: '#fff',
-    borderRadius: 30,
-    paddingLeft: 15
-  },
-  icon: {
-    width: 21,
-    height: 21
+    borderRadius: px2dp(30),
+    paddingLeft: px2dp(15)
   },
   input: {
     flex: 1,
-    marginHorizontal: 5,
+    marginHorizontal: px2dp(5),
+    fontSize: px2dp(16)
   },
 });
 

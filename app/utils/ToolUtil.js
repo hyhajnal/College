@@ -1,5 +1,12 @@
 import { Platform, Dimensions } from 'react-native';
 
-export const isIOS = Platform.OS === 'ios';
+const isIOS = Platform.OS === 'ios';
 
-export const { width, height } = Dimensions.get('window');
+const { width, height } = Dimensions.get('window');
+
+// const pt2px = pt => PixelRatio.getPixelSizeForLayoutSize(pt);
+const uiHeightPx = 640;
+
+const px2dp = uiElementPx => uiElementPx * height / uiHeightPx;
+
+export { width, height, px2dp, isIOS };

@@ -1,20 +1,4 @@
-/**
- *
- * Copyright 2015-present reading
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- *
- */
+
 import { StackNavigator, TabNavigator } from 'react-navigation';
 import Splash from '../pages/Splash';
 import CategoryContainer from '../containers/CategoryContainer';
@@ -22,6 +6,8 @@ import MainContainer from '../containers/MainContainer';
 import WebViewPage from '../pages/WebViewPage';
 // import Feedback from '../pages/Feedback';
 // import About from '../pages/About';
+import FilterList from './FilterList';
+import Map from '../pages/Map/Map';
 import Explore from '../pages/Explore';
 import Me from '../pages/Me';
 import Msg from '../pages/Msg';
@@ -69,7 +55,9 @@ const App = StackNavigator(
         headerLeft: null
       }
     },
-    Web: { screen: WebViewPage }
+    Web: { screen: WebViewPage },
+    Map: { screen: Map },
+    FilterList: { screen: FilterList }
   },
   {
     headerMode: 'screen',

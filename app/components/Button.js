@@ -54,7 +54,7 @@ export default class Button extends Component {
       disabled ? styles.disabledText : null,
       this.props.style,
       disabled ? this.props.styleDisabled : null,
-    ]
+    ];
 
     const children = coalesceNonElementChildren(this.props.children,
       (child, index) =>
@@ -126,4 +126,4 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
   },
-})
+});
